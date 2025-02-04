@@ -135,7 +135,7 @@ HEADER / NAVBAR
 
 .nav__container {
   height: 450px;
-  padding: 40px 15px;
+  padding: 40px 40px;
   align-items: center;
   position: relative;
 }
@@ -340,10 +340,30 @@ color: var(--light-dark-color);
   right: 0;
   z-index: 10000;
   padding: 0 20px 0 8px;
-  color: #6030b1;
   font-size: 32px;
   transition: all .2s ease;
 }
+
+#magnifying--glass {
+  transition: all .2s ease;
+  color: #6030b1;
+}
+
+
+#magnifying--glass:hover {
+  color: orange;
+}
+
+.search__suggestions {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 600px;
+  line-height: 2;
+}
+
+
 
 /* 
 
@@ -355,6 +375,7 @@ FLIX
   margin: 0 auto;
   margin-top: 150px;
   width: 100%;
+  height: 100%;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
