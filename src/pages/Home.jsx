@@ -1,11 +1,12 @@
 import React from "react";
-import Landing from "../components/Landing";
+import Searchbar from "../components/ui/Searchbar";
 
-const Home = () => {
+const Home = ({ setSearchResults }) => {
   return (
-    <>
-      <Landing />
-    </>
+    <div className="search__container">
+      <h1>Type Your Flix</h1>
+      <Searchbar setSearchResults={setSearchResults} />
+    </div>
   );
 };
 

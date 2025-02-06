@@ -14,6 +14,7 @@ const Nav = () => {
                 <FontAwesomeIcon
                   icon="fa-solid fa-film"
                   style={{ color: "#B197FC" }}
+                  id="logo__film"
                 />
                 <img src={PickFlixLogo} alt="" className="logo" />
               </div>
@@ -26,9 +27,9 @@ const Nav = () => {
               <Link to="/">
                 <div className="home__wrapper">
                   <FontAwesomeIcon
-                    icon="fa-solid fa-house faicon__color--change"
+                    icon="fa-solid fa-house"
                     size="2xl"
-                    style={{ color: "#ff9500" }}
+                    id="home--navbar"
                   />
                   {/* <p className="white__text">HOME</p> */}
                 </div>
