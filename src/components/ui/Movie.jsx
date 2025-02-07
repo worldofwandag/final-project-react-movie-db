@@ -14,7 +14,7 @@ const Movie = ({ movie }) => {
         if (mountedRef.current) {
           setImg(image);
         }
-      }, 750);
+      }, 300);
     };
     return () => {
       //When the component unmounts
