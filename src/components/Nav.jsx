@@ -4,6 +4,14 @@ import PickFlixLogo from "../assets/pickflix-logo.png";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+  function openMenu() {
+    document.body.classList += " menu--open"
+  }
+  function closeMenu () {
+    document.body.classList.remove("menu--open")
+  }
+
+
   return (
     <nav>
       <div className="row">
@@ -35,11 +43,30 @@ const Nav = () => {
                 </div>
               </Link>
             </div>
-            <button className="btn__menu">
+            <button className="btn__menu"  onClick={openMenu}>
               <FontAwesomeIcon icon="bars" />
             </button>
           </div>
           <div className="navbar__overlay"></div>
+
+          <div className="menu__backdrop">
+          <button className="btn__menu btn__menu--close" onClick={closeMenu}>
+            <FontAwesomeIcon icon="times" />
+          </button>
+          <ul className="menu__links">
+            <li className="menu__list">
+              <Link to="/" className="menu__link" onClick={closeMenu}>
+                Home
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link to="/flix" className="menu__link" onClick={closeMenu}>
+                Find
+              </Link>
+            </li>
+            
+          </ul>
+        </div>
         </div>
       </div>
     </nav>

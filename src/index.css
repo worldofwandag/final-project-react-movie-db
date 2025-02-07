@@ -205,6 +205,62 @@ HEADER / NAVBAR
   display: none;
 }
 
+.menu__backdrop {
+  position: absolute;
+  background-color: #242424;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: all 300ms ease;
+  opacity: 0;
+  transform: translate(100%);
+}
+
+.menu--open {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.menu--open .menu__backdrop {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0);
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu__list {
+  padding: 32px 0;
+}
+
+.menu__link {
+  color: white;
+  font-size: 40px;
+}
+
+.btn__menu--close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 8px;
+  color: white;
+}
+
+
+
+
+
+
 .navbar__links {
   display: flex;
   align-items: center;
@@ -373,7 +429,7 @@ input[type="text"]:focus {
   top: 0;
   bottom: 0;
   right: 0;
-  z-index: 10000;
+  z-index: 1;
   padding: 0 20px 0 8px;
   font-size: 32px;
   transition: all 0.2s ease;
@@ -557,10 +613,102 @@ FLIX
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 300px;
+  margin-top: 150px;
+}
+
+.flixpick__grid{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  max-width: 1200px;
+  width: 85%;
+  padding: 16px;
+  position: relative;
+  border: 0px solid black;
+  border-radius: 2px;
+  box-shadow: 2px 2px 30px #0e081348;
+  background-color: #f0f1e5;
+  transition: 300ms ease-in-out;
+}
+
+.flix__poster img{
+  max-width: 280px;
+  width: 100%;
+  margin: 32px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  box-shadow: 2px 5px 30px #4e4a528e;
 }
 
 
+
+/* flix detail stylings */
+.flix__title{
+  font-size: 24px;
+  color: var(--yellow-color);
+  padding: 8px;
+}
+.flix__misc--info{
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          /* justify-content: center; */
+  padding: 8px;
+}
+.flix__info .year{
+  font-weight: 500;
+}
+.flix__info .rated{
+  background-color: var(--yellow-color);
+  padding: 0.4rem;
+  margin: 0 0.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.flix__info .released{
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.flix__info .writer{
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.flix__info .actors{
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.flix__info .genre{
+  background-color: var(--light-dark-color);
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+.flix__info .plot{
+  max-width: 400px;
+  margin: 8px;
+}
+.flix__info .language{
+  color: var(--yellow-color);
+  font-style: italic;
+  padding: 8px;
+}
+.flix__info .awards{
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding: 8px;
+}
+.flix__info .awards i{
+  color: var(--yellow-color);
+  margin: 1rem 0.7rem 0 0;
+}
 
 
 
