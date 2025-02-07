@@ -26,13 +26,13 @@ const Movie = ({ movie }) => {
     
       <div key={movie.imdbID} className="movie__card">
         
-        {/* <Link to={`/flix/${movie.imdbID}`} style={{ width: "100%", display:'flex', justifyContent: 'center'}}> */}
+        <Link to={`/flix/${movie.imdbID}`}>
         
         {img ? (
           
           <>
             <img
-              src={movie.Poster !== "N/A" ? movie.Poster : placeholder}
+              src={movie.Poster && movie.Poster !== "N/A" ? movie.Poster : placeholder}
               alt={movie.Title}
               className="movie__poster"
             />
@@ -51,7 +51,7 @@ const Movie = ({ movie }) => {
           </>
         )}
         
-       {/* </Link> */}
+       </Link>
 
       </div>
       
