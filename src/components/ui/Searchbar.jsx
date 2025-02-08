@@ -11,7 +11,7 @@ const Searchbar = ({ setSearchResults }) => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `http://www.omdbapi.com/?s=${query}&apikey=e11ddac9`
+        `https://www.omdbapi.com/?s=${query}&apikey=e11ddac9`
       );
       if (data.Search) {
         setSearchResults(data.Search);
