@@ -9,30 +9,30 @@ const Movie = ({ movie }) => {
   useEffect(() => {
     const image = new Image();
     image.src = movie.Poster;
-    image.onload = () => {
-      setTimeout(() => {
-        if (mountedRef.current) {
-          setImg(image);
-        }
-      }, 300);
+
+    image.onerror = () => {
+      setImg(placeholder); // Fallback to placeholder if there's an error loading the poster
     };
-    return () => {
-      //When the component unmounts
-      mountedRef.current = false;
+
+    image.onload = () => {
+      // Only set the image if the component is still mounted
+      if (mountedRef.current) {
+        setTimeout(() => setImg(image), 300);
+      }
     };
   }, [movie]);
 
   return (
-    
-      <div key={movie.imdbID} className="movie__card">
-        
-        <Link to={`/flix/${movie.imdbID}`}>
-        
+    <div key={movie.imdbID} className="movie__card">
+      <Link to={`/flix/${movie.imdbID}`}>
         {img ? (
-          
           <>
             <img
-              src={movie.Poster && movie.Poster !== "N/A" ? movie.Poster : placeholder}
+              src={
+                movie.Poster && movie.Poster !== "N/A"
+                  ? movie.Poster
+                  : placeholder
+              }
               alt={movie.Title}
               className="movie__poster"
             />
@@ -41,7 +41,6 @@ const Movie = ({ movie }) => {
               <p className="movie__info--year">{movie.Year}</p>
             </div>
           </>
-          
         ) : (
           <>
             <div className="spinner__wrapper">
@@ -50,12 +49,8 @@ const Movie = ({ movie }) => {
             </div>
           </>
         )}
-        
-       </Link>
-
-      </div>
-      
-   
+      </Link>
+    </div>
   );
 };
 

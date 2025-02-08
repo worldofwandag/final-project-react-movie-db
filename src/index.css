@@ -15,7 +15,6 @@ body {
   overflow-x: hidden;
   background-color: #110e18;
   /* background-color: #7a7a7a; */
-
 }
 
 nav {
@@ -156,7 +155,7 @@ HEADER / NAVBAR
 */
 
 .nav__container {
-  height: 450px;
+  height: 200px;
   padding: 40px;
   align-items: center;
   position: relative;
@@ -256,11 +255,6 @@ HEADER / NAVBAR
   color: white;
 }
 
-
-
-
-
-
 .navbar__links {
   display: flex;
   align-items: center;
@@ -314,8 +308,6 @@ HEADER / NAVBAR
   color: yellow;
   transform: scale(1.2);
 }
-
-
 
 .navbar__overlay {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
@@ -474,7 +466,6 @@ FLIX
   position: relative;
 }
 
-
 .flix__searchfilter--wrapper {
   display: flex;
   justify-content: space-around;
@@ -527,7 +518,7 @@ FLIX
   justify-content: center;
   margin: 0 auto;
   margin: 16px;
-  padding: 0 15px 0 0;
+  padding: 0 18px 0 0;
   background-color: #dad8ee;
   border-bottom: 1px solid var(--dark-color);
   border-radius: 10px;
@@ -547,10 +538,10 @@ FLIX
   transform: scale(1.05);
 }
 
-.movie__card:hover h3{
+.movie__card:hover h3 {
   color: yellow;
 }
-.movie__card:hover p{
+.movie__card:hover p {
   color: white;
 }
 
@@ -566,7 +557,7 @@ FLIX
 .movie__info--year {
   color: rgb(59, 59, 59);
   line-height: 1;
-  
+  margin-bottom: 16px;
 }
 
 .movie__info {
@@ -591,7 +582,7 @@ FLIX
   border-color: white transparent;
   border-radius: 50%;
   margin: 20px;
-  animation: spin 1.5s ease infinite;
+  animation: spin 5s ease infinite;
   position: relative;
 }
 
@@ -601,128 +592,147 @@ FLIX
 
 @keyframes spin {
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
+}
+
+/*
+
+DETAILSFLIX
+
+*/
+
+.flix__details--wrapper {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.back__wrapper {
+  display: flex;
+  width: 78%;
+  max-width: 1200px;
+  flex-direction: row;
+}
+
+#back__arrow {
+  color: white;
+  margin: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.back__text {
+  z-index: 10;
 }
 
 .flix__details {
   width: 100%;
   max-width: 1200px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 120px;
 }
 
-.flixpick__grid{
+.flixpick__grid {
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
-  max-width: 1200px;
-  width: 85%;
-  padding: 16px;
+  justify-content: space-around;
+  max-width: 900px;
+  width: 78%;
+  padding: 8px;
   position: relative;
   border: 0px solid black;
   border-radius: 2px;
-  box-shadow: 2px 2px 30px #0e081348;
+  box-shadow: 15px 15px 50px #0e081348;
   background-color: #f0f1e5;
   transition: 300ms ease-in-out;
 }
 
-.flix__poster img{
-  max-width: 280px;
+.flix__poster img {
+  max-width: 320px;
   width: 100%;
-  margin: 32px;
+  margin: 24px;
   border: 2px solid #000000;
   border-radius: 10px;
-  box-shadow: 2px 5px 30px #4e4a528e;
+  box-shadow: 16px 16px 30px #4e4a528e;
 }
-
-
 
 /* flix detail stylings */
-.flix__title{
-  font-size: 24px;
+.flix__title {
+  font-size: 32px;
   color: var(--yellow-color);
+  margin: 0 36px;
   padding: 8px;
 }
-.flix__misc--info{
+.flix__misc--info {
+  margin: 0 36px;
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          /* justify-content: center; */
+  -ms-flex-pack: center;
+  /* justify-content: center; */
   padding: 8px;
 }
-.flix__info .year{
+.flix__main--info {
+  margin: 0 36px;
+}
+
+.flix__info .year {
   font-weight: 500;
 }
-.flix__info .rated{
+.flix__info .rated {
   background-color: var(--yellow-color);
   padding: 0.4rem;
   margin: 0 0.4rem;
   border-radius: 3px;
   font-weight: 600;
 }
-.flix__info .released{
+.flix__info .released {
   font-size: 0.9rem;
   opacity: 0.9;
 }
-.flix__info .writer{
+.flix__info .writer {
   padding: 0.5rem;
   margin: 1rem 0;
 }
 
-.flix__info .actors{
+.flix__info .actors {
   padding: 0.5rem;
   margin: 1rem 0;
 }
 
-.flix__info .genre{
+.flix__info .genre {
   background-color: var(--light-dark-color);
   display: inline-block;
   padding: 0.5rem;
   border-radius: 3px;
 }
-.flix__info .plot{
+.flix__info .plot {
   max-width: 400px;
   margin: 8px;
 }
-.flix__info .language{
+.flix__info .language {
   color: var(--yellow-color);
   font-style: italic;
   padding: 8px;
 }
-.flix__info .awards{
+.flix__info .awards {
   font-weight: 300;
   font-size: 0.9rem;
   padding: 8px;
 }
-.flix__info .awards i{
+.flix__info .awards i {
   color: var(--yellow-color);
   margin: 1rem 0.7rem 0 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 1200px) {
   .results__grid {
@@ -731,7 +741,7 @@ FLIX
 
   .movie__card {
     width: calc(80% / 3);
-    padding: 12px;
+    /* padding: 12px; */
   }
 }
 
@@ -743,7 +753,7 @@ FLIX
   .movie__card {
     width: calc(95% / 3);
     max-width: 220px;
-    padding: 8px;
+    /* padding: 8px; */
   }
 
   .flix__searchfilter--wrapper {
@@ -754,9 +764,22 @@ FLIX
   #filter {
     max-width: 200px;
   }
+
+  .flixpick__grid {
+    max-width: 1200px;
+    width: 90%;
+  }
+
+  .back__wrapper {
+    width: 90%;
+  }
 }
 
 @media (max-width: 780px) {
+  .nav__container {
+    height: 50px;
+    padding-bottom: 4px;
+  }
 
   .flix__searchfilter--wrapper {
     width: 100%;
@@ -780,7 +803,7 @@ FLIX
   .movie__card {
     width: 55%;
     max-width: 800px;
-    padding: 8px;
+    /* padding: 8px; */
   }
 
   .movie__poster {
@@ -788,16 +811,26 @@ FLIX
     max-width: 500px;
   }
 
+  .flix__details {
+    margin-top: 60px;
+  }
+
+  .flixpick__grid {
+    width: 65%;
+    flex-direction: column;
+  }
+
+  .flix__poster img {
+    width: 85%;
+  }
 
   .nav__container {
     padding: 30px;
   }
 
-
   .navbar__links {
-    justify-content: space-between;  
+    justify-content: space-between;
   }
-
 
   .movie__title {
     font-size: 22px;
@@ -817,13 +850,8 @@ FLIX
   } */
 }
 
-
-
-
-
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
-
   .flix__searchfilter--wrapper {
     width: 100%;
     flex-direction: column;
@@ -844,10 +872,18 @@ FLIX
   .movie__card {
     width: 70%;
     max-width: 800px;
-    padding: 8px;
+    /* padding: 8px; */
   }
   .btn__menu {
     display: block;
+  }
+
+  .flixpick__grid {
+    width: 80%;
+  }
+
+  .flix__poster img {
+    width: 85%;
   }
 
   .navbar__links {
