@@ -17,7 +17,7 @@ const Movie = ({ movie }) => {
     image.onload = () => {
       // Only set the image if the component is still mounted
       if (mountedRef.current) {
-        setTimeout(() => setImg(image), 300);
+        setTimeout(() => setImg(image), 50);
       }
     };
   }, [movie]);
